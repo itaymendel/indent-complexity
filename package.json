@@ -1,6 +1,6 @@
 {
   "name": "indent-complexity",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Compute indentation-based complexity scores from file content and git diff.",
   "type": "module",
   "main": "./dist/index.cjs",
