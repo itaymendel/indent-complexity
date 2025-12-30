@@ -28,18 +28,18 @@ Unfortunately none of the researchers suggests a single-metric similar to how Cy
 Σ(depth²) / lineCount
 ```
 
-Deeper nesting contributes exponentially more to the score. Default thresholds:
+I chose depth squared weighting because:
+- Mirrors cognitive complexity principles (nested code is harder to understand)
+- Normalized by line count for cross-file comparison
+- Shallow-but-wide code scores low; deep code scores high
+
+Default thresholds:
 
 | Level    | Score     |
 |----------|-----------|
 | `low`    | < 4       |
 | `medium` | 4 - 10    |
 | `high`   | ≥ 10      |
-
-We chose depth squared weighting because:
-- Mirrors cognitive complexity principles (nested code is harder to understand)
-- Normalized by line count for cross-file comparison
-- Shallow-but-wide code scores low; deep code scores high
 
 `verbose: true` returns all research-backed metrics for you to experiment and explore:
 
