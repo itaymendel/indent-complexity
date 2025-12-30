@@ -1,0 +1,85 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "import", "promise", "node", "vitest", "jsdoc"],
+  "jsPlugins": ["oxlint-plugin-complexity"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "pedantic": "warn",
+    "perf": "warn"
+  },
+  "rules": {
+    "no-unused-vars": "error",
+    "no-console": "error",
+    "eqeqeq": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "no-else-return": "warn",
+
+    "complexity/max-cyclomatic": ["error", { "max": 15 }],
+    "complexity/max-cognitive": ["error", { "max": 12 }],
+
+    "typescript/no-explicit-any": "error",
+    "typescript/no-non-null-assertion": "warn",
+    "typescript/prefer-as-const": "error",
+    "typescript/no-unnecessary-type-assertion": "warn",
+    "typescript/consistent-type-imports": "warn",
+
+    "import/no-cycle": "error",
+    "import/no-self-import": "error",
+    "import/no-duplicates": "error",
+    "import/first": "warn",
+    "import/newline-after-import": "warn",
+    "import/no-named-export": "off",
+    "import/group-exports": "off",
+    "import/exports-last": "off",
+    "import/no-default-export": "error",
+
+    "unicorn/no-nested-ternary": "error",
+    "unicorn/prefer-array-flat-map": "warn",
+    "unicorn/prefer-array-some": "warn",
+    "unicorn/prefer-string-starts-ends-with": "warn",
+    "unicorn/no-instanceof-array": "error",
+    "unicorn/prefer-number-properties": "warn",
+    "unicorn/no-typeof-undefined": "warn",
+    "unicorn/no-useless-spread": "error",
+    "unicorn/no-useless-promise-resolve-reject": "error",
+    "unicorn/prefer-optional-catch-binding": "warn",
+
+    "promise/no-return-wrap": "error",
+    "promise/param-names": "warn",
+
+    "node/no-exports-assign": "error",
+
+    "vitest/no-disabled-tests": "warn",
+    "vitest/no-focused-tests": "error",
+    "vitest/valid-expect": "error",
+
+    "jsdoc/check-access": "warn",
+    "jsdoc/check-param-names": "warn",
+    "jsdoc/check-property-names": "warn",
+    "jsdoc/check-tag-names": "warn",
+    "jsdoc/empty-tags": "warn",
+    "jsdoc/require-param": "off",
+    "jsdoc/require-param-type": "off",
+    "jsdoc/require-returns": "off",
+    "jsdoc/require-returns-type": "off"
+  },
+  "ignorePatterns": ["dist/**", "node_modules/**"],
+  "overrides": [
+    {
+      "files": ["*.config.ts", "*.config.js"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    },
+    {
+      "files": ["**/*.test.ts", "**/*.spec.ts"],
+      "rules": {
+        "max-lines": "off",
+        "max-lines-per-function": "off",
+        "no-inline-comments": "off"
+      }
+    }
+  ]
+}

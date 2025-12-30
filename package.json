@@ -1,0 +1,63 @@
+{
+  "name": "indent-complexity",
+  "version": "0.1.0",
+  "description": "Compute indentation-based complexity scores from file content and git diff.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "lint": "oxlint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "complexity",
+    "indentation",
+    "code-analysis",
+    "metrics",
+    "code-quality",
+    "static-analysis"
+  ],
+  "author": "itaymendel",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itaymendel/indent-complexity"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "detect-indent": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "oxlint": "^1.36.0",
+    "oxlint-plugin-complexity": "^0.1.2",
+    "prettier": "^3.4.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
