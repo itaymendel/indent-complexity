@@ -2,6 +2,10 @@
 
 A language-agnostic code complexity analyzer. Works on **any language** by [measuring indentation depth](https://softwareprocess.es/static/WhiteSpace.html).
 
+## Motivation
+
+Honestly, I would not recommend using this to understand code complexity. There are far better language-specific tools that parse AST and calculate cognitive and cyclomatic complexity (mostly linter plugins, which [I wrote one](https://github.com/itaymendel/oxlint-plugin-complexity)). This is more of a novel approach for a catch all "complexity" metric I wanted to play with as a default calculator for a small [git forensics library](https://github.com/itaymendel/git-forensics).
+
 ## Usage
 
 ```bash
